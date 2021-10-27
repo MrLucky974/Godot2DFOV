@@ -1,0 +1,110 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://FieldOfView.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://PlayerController.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.3646, 156.561 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="ExampleScene" type="Node2D"]
+
+[node name="Player" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="FOV" type="Node2D" parent="Player"]
+script = ExtResource( 1 )
+groups = PoolStringArray( "detectable" )
+
+[node name="Camera" type="Camera2D" parent="Player"]
+current = true
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = 166.0
+margin_top = -107.0
+margin_right = 206.0
+margin_bottom = 173.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect5"]
+position = Vector2( 20, 130 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect5/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." groups=[
+"detectable",
+]]
+position = Vector2( 299, 6 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." groups=[
+"detectable",
+]]
+position = Vector2( -23, -244 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="." groups=[
+"detectable",
+]]
+position = Vector2( -110.307, -175.742 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite4/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="." groups=[
+"detectable",
+]]
+position = Vector2( 80.181, -212.252 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite5/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="." groups=[
+"detectable",
+]]
+position = Vector2( -171, 150 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
+shape = SubResource( 2 )
